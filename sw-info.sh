@@ -16,7 +16,6 @@
 #                - start de program
 #                - create function
 #                v1.1 25/07/2024, Rafael:
-#                - code review
 #                - check the applicability
 # ------------------------------------------------------------------------ #
 
@@ -46,22 +45,22 @@ check_and_create_file inf-desc.log
 check_and_create_file mac-addr.log
 
 # System info
-snmpwalk -v 2c -c public 172.17.91.0/24 1.3.6.1.2.1.1 >> sw-info.log
+snmpwalk -v 2c -c <community> <IP address> 1.3.6.1.2.1.1 >> sw-info.log
 
 sleep 5
 
 # System description
-snmpwalk -v 2c -c public 172.17.91.0/24 1.3.6.1.2.1.1.1 >> sw-desc.log
+snmpwalk -v 2c -c <community> <IP address> 1.3.6.1.2.1.1.1 >> sw-desc.log
 
 sleep 5
 
 # Interface description
-snmpwalk -v 2c -c public 172.17.91.0/24 1.3.6.1.2.1.2.2.1.2 >> inf-desc.log
+snmpwalk -v 2c -c <community> <IP address> 1.3.6.1.2.1.2.2.1.2 >> inf-desc.log
 
 sleep 5
 
 # MAC address
-snmpwalk -v 2c -c public 172.17.91.0/24 1.3.6.1.2.1.2.2.1.6 >> mac-addr.log
+snmpwalk -v 2c -c <community> <IP address> 1.3.6.1.2.1.2.2.1.6 >> mac-addr.log
 
 sleep 5
 
